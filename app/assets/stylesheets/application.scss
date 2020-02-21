@@ -120,3 +120,6 @@ a {
         background: lighten($base-color, 14%);
     }
 }
+.btn-outline-primary {
+    border: 1px solid $base-color;
+}
