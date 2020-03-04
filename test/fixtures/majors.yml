@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  majorname: MyString
-  description: MyText
+    majorname: Chemical Engineering
+    description: The study and application of engineering based in the chemical sciences
 
 two:
-  majorname: MyString
-  description: MyText
+    majorname: Chinese Literature
+    description: The study of Chinese history through its greatest literary works

@@ -1,7 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
+    course: one
+    reviews_content: This is the review for the number one thing
+    difficulty: 4
+    benefit: 3
+    time_spent: 4-6
 
 two:
-  content: MyText
+    course: one
+    reviews_content: Here is another review, this time for the number two thing
+    difficulty: 3
+    benefit: 5
+    time_spent: 7-9

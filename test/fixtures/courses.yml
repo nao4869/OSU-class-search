@@ -4,8 +4,10 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+    coursename: Organic Chemistry
+    course_content: Organic chemistry is a subdiscipline of chemistry that studies the structure, properties and reactions of organic compounds, which contain carbon in covalent bonding.
+
+two:
+    coursename: Intro to Chemistry
+    course_content: Students learn basic chemistry knowledge and skills, like properties of solids, liquids and gases, chemical bonding and radioactivity.
