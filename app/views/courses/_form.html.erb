@@ -8,27 +8,26 @@
     <% end %>
 </div>
 
-<div class = "row">
-    <div class = "col-xs-12">
-        <%= form_with( model: @course, local: true, class: "form-horizontal") do |f| %>
+<div class="row">
+    <div class="col-xs-12">
+        <%= form_with(model: @course, local: true, class: "form-horizontal") do |f| %>
         
             <%= f.hidden_field :institution_id, :value => @institution.id %>
             <%= f.hidden_field :major_id, :value => @major.id %>
 
-            <div class = "form-group">
-                <div class = "control-label col-sm-2">
-                    <%= f.label "Name" %>
+            <div class="form-group">
+                <div class="control-label col-sm-2">
+                    <%= f.label :coursename %>
                 </div>
-
+              
                 <div class="col-sm-8">
                     <%= f.text_field :coursename, class: "form-control", placeholder: "Name of Course (Required)", autofocus: true %>
                 </div>
             </div>
 
-
             <div class="form-group">
                 <div class="control-label col-sm-2">
-                    <%= f.label "Course Content" %>
+                    <%= f.label :course_content %>
                 </div>
 
                 <div class="col-sm-8">
