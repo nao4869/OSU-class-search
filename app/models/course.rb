@@ -19,9 +19,6 @@ class Course < ApplicationRecord
       presence: true, 
       length: {minimum: 10, maximum: 500} 
 
-    validates_inclusion_of :proctoredexams, :in => ["Yes", "No"]
-
-
     #FORMATTING
     before_save :fill_in_prerequisite
     before_save :fill_in_groupwork
