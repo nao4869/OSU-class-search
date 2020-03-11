@@ -99,7 +99,7 @@ a {
 }
 .blog-footer {
     background: lighten($base-color, 52%);
-    position: fixed;
+    // position: fixed;
     bottom: 0;
     width: 100%;
     border-top: 0.05rem solid lighten($base-color, 40%);
