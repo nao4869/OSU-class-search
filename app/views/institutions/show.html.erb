@@ -14,7 +14,7 @@
   <% end %>
 </div>
 
-<!-- DISABLE AUTHENTIFICATION FOR LOCAL DEVELOPMENT -->
+<!-- DISABLE AUTHENTICATION FOR LOCAL DEVELOPMENT -->
 
 <%
 =begin %>
@@ -35,30 +35,38 @@
 <!-- NO AUTHENTICATION FOR LOCAL DEVELOPMENT -->
 
 
-<div class = "institution-actions">   
-  <%= link_to 'Edit Institution', edit_institution_path(@institution), class: "btn btn-xs btn-primary" %>
-  <%= link_to 'Delete Institution', institution_path(@institution), method: :delete, data: {confirm: "Are you sure you want to delete the institution?"}, class: "btn btn-xs btn-danger" %>
-</div>
-
-
-
-<div class = "well well-lg">
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">List of Majors<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% @institution.majors.each do |m| %>
-              <li><%= link_to "#{m.majorname}", major_path(m) %></li>
-            <% end %>   
-          </ul>
-        </li>
-      </ul>
+<div class = "institution-actions">  
+  <div align="center"> 
+    <%= link_to 'Edit Institution', edit_institution_path(@institution), class: "btn btn-xs btn-primary" %>
+    <%= link_to 'Delete Institution', institution_path(@institution), method: :delete, data: {confirm: "Are you sure you want to delete the institution?"}, class: "btn btn-xs btn-danger" %>
+    <%= link_to 'Add Major', new_major_path(institution_id: @institution.id), class: "btn btn-xs btn-success" %>
   </div>
 </div>
 
+
 <div class = "well well-lg">
-  <%= link_to 'Create a New Major', new_major_path(institution_id: @institution.id) %>
+  <h2 align="center">Major Fields of Study</h2>
+
+  <% @institution.majors.each do |m| %>
+    <div>
+      <%= link_to "#{m.majorname}", major_path(m) %>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course List<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% m.courses.each do |c| %>
+                <li><%= link_to "#{c.coursename}", course_path(c) %></li>
+              <% end %>   
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  <% end %>
+
 </div>
 
 

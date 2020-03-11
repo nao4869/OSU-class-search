@@ -25,13 +25,14 @@ class MajorsController < ApplicationController
   # POST /majors
   def create
     @major = Major.new(major_params)
-    @major.save!
+    @institution = Institution.find(@major.institution_id)
+
+    @major.save
     if @major.save
       flash[:success] = "New major has been created"
       redirect_to major_path(@major)
     else 
-      flash[:error] = "Did not save"
-      redirect_to root_path
+      render 'new'
     end
   end
 

@@ -7,6 +7,15 @@ class InstitutionsController < ApplicationController
     
     def new
         @institution = Institution.new
+
+        #generate updated countries list
+        @countries_for_select = CS.countries.values.sort
+        #remove 2 false values at end of array
+        @countries_for_select.pop()
+        @countries_for_select.pop()
+        #put USA at top of list
+        @countries_for_select.unshift("USA")
+        @countries_for_select.delete("United States")
     end
 
     def create
@@ -16,6 +25,14 @@ class InstitutionsController < ApplicationController
             flash[:success] = "New institution has been created"
             redirect_to institution_path(@institution)
         else 
+            #generate updated countries list
+            @countries_for_select = CS.countries.values.sort
+            #remove 2 false values at end of array
+            @countries_for_select.pop()
+            @countries_for_select.pop()
+            #put USA at top of list
+            @countries_for_select.unshift("USA")
+            @countries_for_select.delete("United States")
             render 'new'
         end
     end

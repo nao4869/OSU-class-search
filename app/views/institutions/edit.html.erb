@@ -1,7 +1,12 @@
-<div class = "well well-lg">
-  <h1 align="center">Edit Information for <%= @instituion.name %></h1>
+
+<h3 align="center" class="page-title">Edit Information for <%= @instituion.name %></h3>
+
+<div align="center">
+  <% if @institution.logo.attached? %>
+    <img src="<%= (url_for(@institution.logo)) %>" alt="<%= @institution.name %> logo" width="700" height="300">
+  <% end %>
 </div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', institution_path(@institution) %>
+<%= link_to "Back to #{@institution.name} Homepage", institution_path(@institution) %>

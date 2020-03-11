@@ -9,5 +9,8 @@
 <%
 =end %>
 
-<h1 align="center">Edit Course: <%= @course.coursename %></h1>
+<h3 align="center" class="page-title">Edit Course: <%= @course.coursename %></h1>
+
 <%= render 'form' %>
+
+<%= link_to "Back to Course Page", course_path(@course) %>

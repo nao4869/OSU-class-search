@@ -59,10 +59,10 @@ puts "1 major created"
 Course.create!(
     coursename: "CS160 - Computer Science Orientation",
     course_content: "Computer Science Orientation",
-    prerequisite: "None",
-    proctoredexams: "None",
-    groupwork: "None",
-    textbook: "None",
+    prerequisite: "No",
+    proctoredexams: "No",
+    groupwork: "No",
+    textbook: "No",
     institution_id: 1,
     major_id: 1
 )
@@ -70,9 +70,9 @@ Course.create!(
 Course.create!(
     coursename: "CS161 - Intro to Computer Science I",
     course_content: "Overview of fundamental concepts of computer science. Introduction to problem solving, software engineering, and object-oriented programming. Includes algorithm design and program development. Students write small programs in C++.",
-    prerequisite: "None",
+    prerequisite: "No",
     proctoredexams: "Yes",
-    groupwork: "None",
+    groupwork: "No",
     textbook: "Starting Out with C++: Early Objects (9th edition)",
     institution_id: 1,
     major_id: 1
@@ -92,7 +92,7 @@ Course.create!(
 Course.create!(
     coursename: "CS165 - Intro to Computer Science(Accelerated)",
     course_content: "Condenses CS161 and CS162 into one fast-paced course.",
-    prerequisite: "None",
+    prerequisite: "No",
     proctoredexams: "Yes",
     groupwork: "Two small group projects in which you compare your work on a previous assignment and decide whose was best and explain why.",
     textbook: "Starting Out with C++: Early Objects (9th edition)",
@@ -103,9 +103,9 @@ Course.create!(
 Course.create!(
     coursename: "CS225 - Discrete Structures in Computer Science",
     course_content: "An introduction to the discrete mathematics of computer science, including logic, set and set operations, methods of proof, recursive definitions, combinatorics, and graph theory.",
-    prerequisite: "None",
+    prerequisite: "No",
     proctoredexams: "Yes",
-    groupwork: "None",
+    groupwork: "No",
     textbook: "Discrete Mathematics with Applications (4th edition)",
     institution_id: 1,
     major_id: 1
@@ -127,7 +127,7 @@ Course.create!(
     course_content: "Introduction to functional organization and operation of digital computers. Coverage of assembly language; addressing, stacks, argument passing, arithmetic operations, decisions, macros, modularization, linkers and debuggers.",
     prerequisite: "CS161 or CS165",
     proctoredexams: "Yes",
-    groupwork: "None",
+    groupwork: "No",
     textbook: "Assembly Language for x86 Processors (7th edition)",
     institution_id: 1,
     major_id: 1
@@ -138,7 +138,7 @@ Course.create!(
     course_content: "How to design and implement a multi-tier application using web technologies: creation of extensive custom client- and server-side code, consistent with achieving a high-quality software architecture.",
     prerequisite: "CS162 or CS165",
     proctoredexams: "Yes",
-    groupwork: "None",
+    groupwork: "No",
     textbook: "Eloquent JavaScript, 2nd Ed.: A Modern Introduction to Programming (2nd edition)",
     institution_id: 1,
     major_id: 1
@@ -170,8 +170,8 @@ Course.create!(
     coursename: "CS344 - Operating Systems",
     course_content: "Introduction to operating systems using UNIX as the case study. System calls and utilities, fundamentals of processes and interprocess communication.",
     prerequisite: "CS261 or CS271",
-    proctoredexams: "None",
-    groupwork: "None",
+    proctoredexams: "No",
+    groupwork: "No",
     textbook: "Course Materials",
     institution_id: 1,
     major_id: 1
@@ -203,7 +203,7 @@ Course.create!(
     coursename: "CS362 - Software Engineering II",
     course_content: "Introduction to the 'back end' of the software engineering lifecycle implementation; verification and validation; debugging; maintenance.",
     prerequisite: "CS261",
-    proctoredexams: "None",
+    proctoredexams: "No",
     groupwork: "Two group assignments and you can form your own groups.",
     textbook: "Course materials",
     institution_id: 1,
@@ -214,8 +214,8 @@ Course.create!(
     coursename: "CS372 - Intro to Computer Networks",
     course_content: "Computer network principles, fundamental networking concepts, packet-switching and circuit switching, TCP/IP protocol layers, reliable data transfer, congestion control, flow control, packet forwarding and routing, MAC addressing, multiple access techniques.",
     prerequisite: "CS261 and CS271",
-    proctoredexams: "None",
-    groupwork: "None",
+    proctoredexams: "No",
+    groupwork: "No",
     textbook: "Computer Networking: A Top-Down Approach (7th edition)",
     institution_id: 1,
     major_id: 1
@@ -224,8 +224,8 @@ Course.create!(
     coursename: "CS373 - Defense Against the Dark Arts",
     course_content: "Introduction to the current state of the art in anti-malware, computer forensics, and networking, messaging, and web security. Broad introduction to the field of computer security. Only available in winter quarters.",
     prerequisite: "CS344 and CS340 and CS372",
-    proctoredexams: "None",
-    groupwork: "None",
+    proctoredexams: "No",
+    groupwork: "No",
     textbook: "Course materials",
     institution_id: 1,
     major_id: 1
@@ -244,7 +244,7 @@ Course.create!(
     coursename: "CS467 - Online Capstone Project",
     course_content: "Taken the last quarter before graduation. This course offers real-world team-based experience with the software engineering design and delivery cycle, including requirements analysis and specification, design techniques, and requirements and final project written documentation. In a group of 3, students spend the quarter creating a single project. (Formerly CS419)",
     prerequisite: "CS344, CS361, and CS362",
-    proctoredexams: "None",
+    proctoredexams: "No",
     groupwork: "This entire course is a group project",
     textbook: "Course materials",
     institution_id: 1,
@@ -255,7 +255,7 @@ Course.create!(
     course_content: "Theoretical and practical survey of parallel programming, including a discussion of parallel architectures, parallel programming paradigms, and parallel algorithms. Programming one or more parallel computers in a higher-level parallel language.",
     prerequisite: "CS261",
     proctoredexams: "Yes",
-    groupwork: "None",
+    groupwork: "No",
     textbook: "Course materials",
     institution_id: 1,
     major_id: 1
@@ -265,7 +265,7 @@ Course.create!(
     course_content: "Covers developing RESTful cloud services, an approach based on representational state transfer technology, an architectural style and approach to communications used in modern cloud services development. ",
     prerequisite: "CS290 and CS340 and CS372",
     proctoredexams: "Yes",
-    groupwork: "None",
+    groupwork: "No",
     textbook: "Course materials",
     institution_id: 1,
     major_id: 1
@@ -274,8 +274,8 @@ Course.create!(
     coursename: "CS496 - Mobile and Cloud Software Development",
     course_content: "Introduction to the concepts and techniques for developing mobile and cloud applications.",
     prerequisite: "CS344",
-    proctoredexams: "None",
-    groupwork: "None",
+    proctoredexams: "No",
+    groupwork: "No",
     textbook: "Course materials",
     institution_id: 1,
     major_id: 1

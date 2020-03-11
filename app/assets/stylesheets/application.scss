@@ -99,7 +99,7 @@ a {
 }
 .blog-footer {
     background: lighten($base-color, 52%);
-    position: fixed;
+    // position: fixed;
     bottom: 0;
     width: 100%;
     border-top: 0.05rem solid lighten($base-color, 40%);
@@ -119,4 +119,7 @@ a {
     &:hover {
         background: lighten($base-color, 14%);
     }
+}
+.btn-outline-primary {
+    border: 1px solid $base-color;
 }

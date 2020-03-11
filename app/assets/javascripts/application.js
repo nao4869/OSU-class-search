@@ -17,4 +17,3 @@
 //= require bootstrap-sprockets
 //= require Chart.bundle
 //= require chartkick
-//= require country_state_select

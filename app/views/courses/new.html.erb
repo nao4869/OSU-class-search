@@ -1,3 +1,5 @@
-<h3 align="center">Create a Course</h3>
+<h3 align="center" class="page-title">Create a Course</h3>
 
 <%= render 'form' %>
+
+<%= link_to "Back to #{@major.majorname} Homepage", major_path(@major) %>

@@ -17,9 +17,13 @@
     <h4 class = "center description"><strong style="color:blue;">Major Description:</strong></h4>
     <p align="center"><%= @major.description %></p>
 
-    <div class = "major-actions">        
+    <div class = "major-actions">  
+      <div align="center">      
         <%= link_to 'Edit major', edit_major_path(@major), class: "btn btn-xs btn-primary" %>
-        <%= link_to 'Delete major', major_path(@major), method: :delete, data: {confirm: "Are you sure you want to delete the major?"}, class: "btn btn-xs btn-danger" %>    
+        <%= link_to 'Delete major', major_path(@major), method: :delete, data: {confirm: "Are you sure you want to delete the major?"}, class: "btn btn-xs btn-danger" %>  
+        <%= link_to 'Add Course', new_course_path(institution_id: @institution.id, major_id: @major.id), class: "btn btn-xs btn-success" %> 
+        <%= link_to "Back to #{@institution.name} Homepage", institution_path(@institution), class: "btn btn-xs btn-danger" %>
+      </div>
     </div>
 
 </div>
@@ -49,23 +53,13 @@
 <br />
 
 <div class = "well well-lg">
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">List of Courses<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% @major.courses.each do |c| %>
-              <li><%= link_to "#{c.coursename}", course_path(c) %></li>
-            <% end %>   
-          </ul>
-        </li>
-      </ul>
-  </div>
+  <h2 align="center"><%= @major.majorname %> Courses</h2>
+  <% @major.courses.each do |c| %>
+    <div align="center">
+      <p><%= link_to "#{c.coursename}", course_path(c) %> 
+        &nbsp;&nbsp;.........&nbsp;&nbsp; 
+        <%= c.reviews.count %> reviews</p>
+      <br />
+    </div>
+  <% end %>
 </div>
-
-<div class = "well well-lg">
-  <%= link_to 'Create a New Course', new_course_path(institution_id: @institution.id, major_id: @major.id) %>
-</div>
-
-
-
