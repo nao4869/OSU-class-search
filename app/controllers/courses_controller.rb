@@ -16,14 +16,15 @@ class CoursesController < ApplicationController
 
     def create
         @course = Course.new(course_params)
-        @course.save!
+        @institution = Institution.find(@course.institution_id)
+        @major = Major.find(@course.major_id)
+
+        @course.save
         if @course.save
             flash[:success] = "New course has been created"
             redirect_to course_path(@course)
         else 
-            #render 'new'
-            flash[:error] = "Did not save"
-            redirect_to root_path
+            render 'new'
         end
     end
 
@@ -37,14 +38,14 @@ class CoursesController < ApplicationController
         @score3 = @course.reviews.where(difficulty: 3).count
         @score4 = @course.reviews.where(difficulty: 4).count
         @score5 = @course.reviews.where(difficulty: 5).count
-        @challenge_score = {"1 - Easy" => @score1, "2 - Mostly Easy" => @score2, "3 - Somewhat hard" => @score3, "4 - Very challenging" => @score4, "5 - Prepare to get wrecked" => @score5}
+        @challenge_score = {"1 - Very Easy" => @score1, "2 - Somewhat Easy" => @score2, "3 - Average" => @score3, "4 - Challenging" => @score4, "5 - Very Difficult" => @score5}
 
         @career1 = @course.reviews.where(benefit: "1").count
         @career2 = @course.reviews.where(benefit: "2").count
         @career3 = @course.reviews.where(benefit: "3").count
         @career4 = @course.reviews.where(benefit: "4").count
         @career5 = @course.reviews.where(benefit: "5").count
-        @career_benefit = {"1 - No benefit at all" => @career1, "2 - Less benefit" => @career2, "3 - Some benefit" => @career3, "4 - Very useful for career" => @career4, "5 - Essential for career" => @career5}
+        @career_benefit = {"1 - Not Beneficial" => @career1, "2 - Hardly Beneficial" => @career2, "3 - Somewhat Beneficial" => @career3, "4 - Beneficial" => @career4, "5 - Very Beneficial" => @career5}
 
         @time1 = @course.reviews.where(time_spent: "1-3").count
         @time2 = @course.reviews.where(time_spent: "4-6").count
@@ -52,8 +53,6 @@ class CoursesController < ApplicationController
         @time4 = @course.reviews.where(time_spent: "10-12").count
         @time5 = @course.reviews.where(time_spent: "13-15").count
         @time_spent = {"1-3 hours" => @time1, "4-6 hours" => @time2, "7-9 hours" => @time3, "10-12 hours" => @time4, "13-15 hours" => @time5}
-
-
     end
 
     def destroy

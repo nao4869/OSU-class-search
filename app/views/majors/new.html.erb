@@ -1,5 +1,5 @@
-<h3 align = "center">Submit a New Major</h3>
+<h1 align="center" class="page-title">Submit a New Major</h3>
 
 <%= render 'form', major: @major %>
 
-<%= link_to 'Back', majors_path %>
+<%= link_to "Back to #{@institution.name} Homepage", institution_path(@institution) %>

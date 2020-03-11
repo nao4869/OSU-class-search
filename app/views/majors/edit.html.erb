@@ -1,5 +1,5 @@
-<h3 align = "center">Edit Major</h3>
+<h3 align="center" class="page-title">Edit Information for <%= @major.majorname %> Major</h3>
 
 <%= render 'form', major: @major %>
 
-<%= link_to 'Back', majors_path %>
+<%= link_to "Back to #{@major.majorname} Homepage", major_path(@major) %>

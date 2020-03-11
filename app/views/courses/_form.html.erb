@@ -19,9 +19,9 @@
                 <div class="control-label col-sm-2">
                     <%= f.label :coursename %>
                 </div>
-
+              
                 <div class="col-sm-8">
-                    <%= f.text_field :coursename, class: "form-control", placeholder: "Name of class", autofocus: true %>
+                    <%= f.text_field :coursename, class: "form-control", placeholder: "Name of Course (Required)", autofocus: true %>
                 </div>
             </div>
 
@@ -31,23 +31,37 @@
                 </div>
 
                 <div class="col-sm-8">
-                    <%= f.text_field :course_content, class: "form-control", placeholder: "Description of course", autofocus: true %>
+                    <%= f.text_field :course_content, class: "form-control", placeholder: "Description of Course (Required)", autofocus: true %>
+                </div>
+            </div>
+
+            <div class = "form-group">
+                <div class = "control-label col-sm-2">
+                    <%= f.label :course_content %>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="control-label col-sm-2">
-                    <%= f.label :prerequisite %>
+                    <%= f.label "Prerequisite(s)" %>
                 </div>
 
                 <div class="col-sm-8">
-                    <%= f.text_field :prerequisite, class: "form-control", placeholder: "Pre-requisite of class", autofocus: true %>
+                    <%= f.text_field :prerequisite, class: "form-control", placeholder: "Prerequisite(s) of class", autofocus: true %>
+                    <%= f.label :prerequisite %>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="control-label col-sm-2">
-                    <%= f.label :proctoredexams %>
+                    <%= f.label "Proctored Exams" %>
+                </div>
+
+                <div class="col-sm-8">
+                    <%= f.radio_button :proctoredexams, "Yes" %>
+                    <%= f.label :proctoredexams, "Yes" %>
+                    <%= f.radio_button :proctoredexams, "No" %>
+                    <%= f.label :proctoredexams, "No" %>
                 </div>
 
                 <div class="col-sm-8">
@@ -57,7 +71,7 @@
 
             <div class="form-group">
                 <div class="control-label col-sm-2">
-                    <%= f.label :groupwork %>
+                    <%= f.label "Group Work Required" %>
                 </div>
 
                 <div class="col-sm-8">
