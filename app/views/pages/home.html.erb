@@ -1,9 +1,21 @@
-<%= javascript_pack_tag 'application' %>
+<div class = "center jumbotron">
+    <h1>Course Search</h1>
 
-<%= react_component("Home", {
-    link: {
-        text: "About this App",
-        path: about_path
-        }
-    }
-) %>
+    <h2><%= link_to "About this App", about_path %></h2>
+        <br>
+        <div class="row">
+            <p>List of Institutions - Check all current institutions and create a new institution</p>
+            <p>Create a new Course - Create new courses for institutions</p>
+            <p>Create New Review - Create new reviews for courses</p>
+            <p>Welcome to the Oregon State University Course Review website. This
+            tool was created by students in the School of Engineering's Online
+            eCampus program, majoring in Electrical Engineering and Computer Science.
+            The purpose of this tool is to provide visible feedback about course
+            content and instructor quality as a resource for the benefit of future
+            students. The reviews you find here were written by actual students. Anyone
+            can view the content. If you would like to contribute a review to this
+            site, you will need to sign in using your ONID name and password to verify
+            that you have taken the class which you are reviewing.</p>
+
+        </div>
+</div>
